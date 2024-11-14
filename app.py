@@ -1,10 +1,9 @@
 import streamlit as st
 import pandas as pd
-import pickle
+import joblib
 
 # Load the pre-trained model
-with open('model.pkl', 'rb') as file:
-    model = pickle.load(file)
+model = joblib.load('model.pkl')
 
 st.title("Prediction Interface")
 
