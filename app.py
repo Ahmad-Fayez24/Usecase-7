@@ -3,7 +3,7 @@ import pandas as pd
 import joblib
 
 # Load the pre-trained model
-model = joblib.load('model.pkl')
+model = joblib.load('model.joblib')
 
 st.title("Prediction Interface")
 
