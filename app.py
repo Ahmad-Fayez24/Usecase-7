@@ -1,6 +1,6 @@
 import streamlit as st
+import requests
 import pandas as pd
-
 
 st.title("Prediction Interface")
 
@@ -18,5 +18,13 @@ st.write(input_data)
 
 # Predict button
 if st.button("Predict"):
-    url = "https://usecase-7-k4mj.onrender.com"
-    st.write(f"Prediction: {url[0]}")
+    url = "https://usecase-7-k4mj.onrender.com/predict"
+    # Prepare the payload for the API request
+    payload = {"age": age, "appearance": appearance, "goals": goals}
+    # Send the POST request to the FastAPI server
+    response = requests.post(url, json=payload)
+    if response.status_code == 200:
+        prediction = response.json().get("prediction")
+        st.write(f"Prediction: {prediction}")
+    else:
+        st.write("Error:", response.status_code)
