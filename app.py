@@ -18,5 +18,5 @@ st.write(input_data)
 
 # Predict button
 if st.button("Predict"):
-    url = "https://usecase-7-k4mj.onrender.com/predict"
+    url = "https://usecase-7-k4mj.onrender.com"
     st.write(f"Prediction: {url[0]}")
