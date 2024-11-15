@@ -1,9 +1,6 @@
 import streamlit as st
 import pandas as pd
-import joblib
 
-# Load the pre-trained model
-model = joblib.load('model.joblib')
 
 st.title("Prediction Interface")
 
@@ -21,5 +18,5 @@ st.write(input_data)
 
 # Predict button
 if st.button("Predict"):
-    prediction = model.predict(input_data)
-    st.write(f"Prediction: {prediction[0]}")
+    url = "https://usecase-7-k4mj.onrender.com/predict"
+    st.write(f"Prediction: {url[0]}")
